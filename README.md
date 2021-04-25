@@ -34,6 +34,17 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 * `pip install -r requirements.txt` (NOTE : There is issue while installing pandas on python 3.6.9 downgrade pandas version to 1.1.5)
 
 
+## Important
+
+* Before running the script, it is very important to generate the `enctoken.txt` file which is used in `config.py` file
+* There are 2 ways to do this
+    1. Copy Paste the enctoken from Zerodha Web Session using Chrome DevTools, check images in useful snapshots
+    2. Another way to do this is to run the `login_and_generate_enctoken.py` script, this must be done once. 
+       May have to run again if you invalidate the session.
+       Run this again if you face any issues.
+       This step will invalidate your web session if you have logged in through browser.
+
+
 ### Running the Script
 
 * Before running the actual script `chartink_kite.py` you must create .env file same folder
@@ -51,7 +62,7 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 * Coding is still in progress, for any suggestions please open discussions [here](https://github.com/algo2t/chartink_kite_amo_mean_reversion/discussions/1#discussion-3336072).
 
 
-### Some useful snapshots
+### Useful snapshots
 
 * ![2021-04-25 05_01_48-WSL-Ubuntu](https://user-images.githubusercontent.com/73125182/115976343-aeb37b00-a58a-11eb-964f-c547cc329aac.png)
 * ![image](https://user-images.githubusercontent.com/73125182/115976649-aad52800-a58d-11eb-95cb-e919bc7850d0.png)
@@ -60,6 +71,7 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 
 Below images there is an error which occurred because the session was expired. New enctoken was added to `enctoken.txt` file
 * ![image](https://user-images.githubusercontent.com/73125182/115976802-4adf8100-a58f-11eb-8d26-0477e9083c9f.png)
+* ![image](./images/2021-04-25 06_50_57-KiteENCTOKEN.png)
 
 * ![image](https://user-images.githubusercontent.com/73125182/115976365-f0442600-a58a-11eb-8e6f-19e2bd29a773.png)
 * ![image](https://user-images.githubusercontent.com/73125182/115976373-110c7b80-a58b-11eb-9f25-fadd2f7c5f15.png)

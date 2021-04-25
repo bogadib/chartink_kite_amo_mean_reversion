@@ -1,30 +1,20 @@
-import pytz
-import pandas as pd
-import requests
-from bs4 import BeautifulSoup
-
+import logging
 import os
-
 from datetime import datetime as dt
 from datetime import timedelta as td
 from time import sleep
 
+import pandas as pd
+import pytz
+import requests
+from bs4 import BeautifulSoup
+
 import config
-import logging
-
-
 from kiteext import KiteExt
 
-
 log = logging.getLogger(__name__)
-
-
 # NOTE while creating date objects you can use zone info which is very helpful when you are running scripts on outside India location
 zone = pytz.timezone('Asia/Kolkata')
-
-start = dt.now(tz=zone)
-print(start)
-
 
 def get_stocks():
 
@@ -53,8 +43,9 @@ def get_stocks():
         df.reset_index(inplace=True)
         df.drop('index', axis=1, inplace=True)
 
+        print(f'number of stocks :: {len(df)}')
         if len(df) > 10:
-            print(f'number of stocks :: {len(df)}')
+            print('returning only first 10 stocks')   
             df = df.head(10)
         return df
 
@@ -100,6 +91,9 @@ def get_amo_orders():
 if __name__ == "__main__":
     global kite
 
+    begin_time = dt.now(tz=zone)
+    print(begin_time)
+
     stocks = get_stocks()
     print(stocks)
 
@@ -107,10 +101,10 @@ if __name__ == "__main__":
     kite.set_headers(config.enctoken)
     margins = kite.margins()
     net_balance_equity = margins['equity']['net']
-    # live_balance_equity = margins['equity']['available']['live_balance']
+    live_balance_equity = margins['equity']['available']['live_balance']
 
     print(net_balance_equity)
-    # print(live_balance_equity)
+    print(live_balance_equity)
 
     # capital = capital_per_stock(net_balance_equity, len(stocks)) # If you want to allocate as per stock
     net_balance_equity = 50000.0  # for the sake of calculation
@@ -121,7 +115,12 @@ if __name__ == "__main__":
     stocks = stocks[['nsecode', 'close', 'qty', 'per_chg', 'volume']]
 
     print(stocks)
-    # orders_ids = place_amo_orders(stocks)
-    # sleep(2)
-    # print(orders_ids)
+    orders_ids = place_amo_orders(stocks)
+    sleep(2)
+    print(orders_ids)
     print(get_amo_orders())
+
+    end_time = dt.now(tz=zone)
+    duration = (end_time - begin_time)
+
+    print(f'Total time taken by script :: {duration}')
