@@ -1,0 +1,7 @@
+kiteconnect==3.9.2
+requests==2.25.1
+pytz==2021.1
+six==1.15.0
+pandas==1.2.4
+beautifulsoup4==4.9.3
+python-dotenv==0.17.0

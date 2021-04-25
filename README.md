@@ -1,1 +1,54 @@
-# chartink_kite_amo_mean_reversion
+# Chartink Vishal Mehta Mean Reversion Scanner
+
+This python script gets the stocks scanned by Mean Reversion scanner from Vishal Mehta. Once the stocks are available, it places AMO (After Market Order) in Zerodha Trading account using `kiteconnect` APIs.
+
+The scanner can be located on chartink [https://chartink.com/screener/vishal-mehta-mean-reversion](https://chartink.com/screener/vishal-mehta-mean-reversion)
+
+If available stocks are more than 10 then the stocks are sorted according to latest close price _ascending_ and only 10 orders are placed.
+
+
+
+## How to use this repository
+
+### Get the code
+
+* Download the repository as zip
+* Unzip / extract it in a folder preferably on `D:\trading` Avoid extracting on Desktop
+ 
+
+### Installation
+
+* Install Python 3.9.4 latest version as of today (25th April 2021)
+* It can work on python 3.6 and above but it is not tested
+
+### Virtual Environment Creation
+
+* `python -m pip install virtualenv` on Windows or `python3 -m pip install --user virtualenv` on Linux 
+* Go to the folder `D:\trading` and then create virtualenv as `venv` using command as `python -m virtualenv venv` on Windows or `python3 -m virtualenv -p py3 venv` on Linux
+* Activate the virtual environment using `.\venv\Scripts\activate` on Windows or `source ./venv/bin/activate` on Linux/Mac. 
+* Upgrade packages using command `python -m pip install -U pip wheel setuptools`
+
+
+* `pip install .\Twisted-21.2.0-py3-none-any.whl` (MANDATORY on Windows, to install kiteconnect successfully.)
+* `pip install .\TA_Lib-0.4.19-cp39-cp39-win_amd64.whl` (OPTIONAL on Windows)
+* `pip install -r requirements.txt`
+
+
+### Running the Script
+
+* Before running the actual script `chartink_kite.py` you must create .env file same folder
+* Copy the .env.example file or rename it to create a new .env file in the same folder
+* Change the values for USERNAME, PASSWORD and PIN with your own credentials
+* Finally you can run the script using `python chartink.py` or `python3 chartink.py`
+
+## Note
+
+* Some lines are commented since this code is not tested in Live Market
+* Stop Loss for the Strategy is not implemented in the script, **3%** Stop Loss recommended by Vishal Mehta, people have posted that **4%** works better but some people keep Stop Loss based on their own Risk e.g. **2%** to **2.5%**
+* Similarly, Target or Profit must be kept accordingly to your own Risk Management. Vishal Mehta recommends **6%** while some keep it at **4.5%** 
+* Also, some people exit when the overall MTM / PnL reaches approximately **5%** or **6%** of invested capital.
+
+
+### Some useful snapshots
+
+* ![virtualenv](images/2021-04-25 05_01_48-WSL-Ubuntu.png)
