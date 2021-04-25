@@ -31,7 +31,7 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 
 * `pip install .\Twisted-21.2.0-py3-none-any.whl` (MANDATORY on Windows, to install kiteconnect successfully.)
 * `pip install .\TA_Lib-0.4.19-cp39-cp39-win_amd64.whl` (OPTIONAL on Windows)
-* `pip install -r requirements.txt`
+* `pip install -r requirements.txt` (NOTE : There is issue while installing pandas on python 3.6.9 downgrade pandas version to 1.1.5)
 
 
 ### Running the Script
@@ -47,13 +47,20 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 * Stop Loss for the Strategy is not implemented in the script, **3%** Stop Loss recommended by Vishal Mehta, people have posted that **4%** works better but some people keep Stop Loss based on their own Risk e.g. **2%** to **2.5%**
 * Similarly, Target or Profit must be kept accordingly to your own Risk Management. Vishal Mehta recommends **6%** while some keep it at **4.5%** 
 * Also, some people exit when the overall MTM / PnL reaches approximately **5%** or **6%** of invested capital.
-* More images will be added in future.
+* More images will be added in future. Please check existing images.
 * Coding is still in progress, for any suggestions please open discussions [here](https://github.com/algo2t/chartink_kite_amo_mean_reversion/discussions/1#discussion-3336072).
 
 
 ### Some useful snapshots
 
 * ![2021-04-25 05_01_48-WSL-Ubuntu](https://user-images.githubusercontent.com/73125182/115976343-aeb37b00-a58a-11eb-964f-c547cc329aac.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976649-aad52800-a58d-11eb-95cb-e919bc7850d0.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976685-fee00c80-a58d-11eb-93eb-92c55cbab47a.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976708-57afa500-a58e-11eb-853a-2b3bbd8d0763.png)
+
+Below images there is an error which occurred because the session was expired. New enctoken was added to `enctoken.txt` file
+* ![image](https://user-images.githubusercontent.com/73125182/115976802-4adf8100-a58f-11eb-8d26-0477e9083c9f.png)
+
 * ![image](https://user-images.githubusercontent.com/73125182/115976365-f0442600-a58a-11eb-8e6f-19e2bd29a773.png)
 * ![image](https://user-images.githubusercontent.com/73125182/115976373-110c7b80-a58b-11eb-9f25-fadd2f7c5f15.png)
 * ![image](https://user-images.githubusercontent.com/73125182/115976385-2f727700-a58b-11eb-948c-83546fc1a2dd.png)
@@ -61,5 +68,7 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 
 
 
+## TEST IMAGES
 
+1. ![image](/images/2021-04-25 05_01_48-WSL-Ubuntu.png)
 
