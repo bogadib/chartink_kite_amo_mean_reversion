@@ -70,5 +70,5 @@ Below images there is an error which occurred because the session was expired. N
 
 ## TEST IMAGES
 
-1. ![image](/images/2021-04-25 05_01_48-WSL-Ubuntu.png)
+1. ![image](images/2021-04-25 05_01_48-WSL-Ubuntu.png)
 
