@@ -85,7 +85,8 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 * Getting the enctoken from the kite dashboard using Chrome DevTool. Copy paste it to enctoken.txt
   This will help to keep both web session running and script execution will not invalidate web session
 
-  ![image](./images/2021-04-25 06_50_57-KiteENCTOKEN.png)
+  ![image](https://user-images.githubusercontent.com/73125182/115994306-15b94a00-a5f4-11eb-972e-41e9f1ad1a0f.png)
+
 
 * Kite dashboard orders page before placing AMO orders.
  
