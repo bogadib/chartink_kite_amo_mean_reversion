@@ -16,6 +16,7 @@ log = logging.getLogger(__name__)
 # NOTE while creating date objects you can use zone info which is very helpful when you are running scripts on outside India location
 zone = pytz.timezone('Asia/Kolkata')
 
+
 def get_stocks():
 
     with requests.Session() as s:
@@ -28,8 +29,8 @@ def get_stocks():
         process_url = 'https://chartink.com/screener/process'
         payload = {
             # NOTE Vishal Mehta Mean Reversion Selling - Place Limit Order at 1% of Latest Close Price 3% SL and 6% Target Exit all positions at 3PM
-            'scan_clause': '( {33489} ( latest close > latest sma( close,200 ) and latest rsi( 2 ) > 50 and '\
-            'latest close > 1 day ago close * 1.03 and latest close > 200 and latest close < 2000 and latest close > ( 4 days ago close * 1.0 ) ) ) '
+            'scan_clause': '( {33489} ( latest close > latest sma( close, 200 ) and latest rsi( 2 ) > 50 and '\
+            'latest close > 1 day ago close * 1.03 and latest close > 200 and latest close < 5000 and latest close > ( 4 days ago close * 1.0 ) ) ) '
         }
 
         r = s.post(process_url, data=payload)
@@ -45,7 +46,7 @@ def get_stocks():
 
         print(f'number of stocks :: {len(df)}')
         if len(df) > 10:
-            print('returning only first 10 stocks')   
+            print('returning only first 10 stocks')
             df = df.head(10)
         return df
 
@@ -76,17 +77,19 @@ def place_amo_orders(stocks):
         print(stock.symbol, stock.price, stock.qty)
         order = place_amo_limit_order(stock.symbol, stock.price, stock.qty)
         order_ids.append(order)
-        sleep(0.2)
 
     return order_ids
+
 
 def get_amo_orders():
     global kite
     data = kite.orders()
     df = pd.DataFrame(data, index=None)
-    df = df[['exchange', 'tradingsymbol', 'order_type', 'quantity', 'variety', 'status', 'order_id', 'order_timestamp', 'product', 'transaction_type']]
+    df = df[['exchange', 'tradingsymbol', 'order_type', 'quantity', 'variety',
+             'status', 'order_id', 'order_timestamp', 'product', 'transaction_type']]
     df = df.loc[df['status'] == 'AMO REQ RECEIVED']
     return df
+
 
 if __name__ == "__main__":
     global kite
@@ -116,11 +119,11 @@ if __name__ == "__main__":
 
     print(stocks)
     orders_ids = place_amo_orders(stocks)
-    sleep(2)
     print(orders_ids)
     print(get_amo_orders())
 
     end_time = dt.now(tz=zone)
+    print(end_time)
     duration = (end_time - begin_time)
 
     print(f'Total time taken by script :: {duration}')

@@ -32,6 +32,7 @@ if __name__ == "__main__":
     print(live_balance_equity)
 
     end_time = dt.now(tz=zone)
+    print(end_time)
     duration = (end_time - begin_time)
 
     print(f'Total time taken by script :: {duration}')
