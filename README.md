@@ -64,19 +64,42 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 
 ### Useful snapshots
 
-* ![2021-04-25 05_01_48-WSL-Ubuntu](https://user-images.githubusercontent.com/73125182/115976343-aeb37b00-a58a-11eb-964f-c547cc329aac.png)
-* ![image](https://user-images.githubusercontent.com/73125182/115976649-aad52800-a58d-11eb-95cb-e919bc7850d0.png)
-* ![image](https://user-images.githubusercontent.com/73125182/115976685-fee00c80-a58d-11eb-93eb-92c55cbab47a.png)
-* ![image](https://user-images.githubusercontent.com/73125182/115976708-57afa500-a58e-11eb-853a-2b3bbd8d0763.png)
+* Cloning repository, creating virutalenv and installing packages
+  
+  ![2021-04-25 05_01_48-WSL-Ubuntu](https://user-images.githubusercontent.com/73125182/115976343-aeb37b00-a58a-11eb-964f-c547cc329aac.png)
 
-Below images there is an error which occurred because the session was expired. New enctoken was added to `enctoken.txt` file
-* ![image](https://user-images.githubusercontent.com/73125182/115976802-4adf8100-a58f-11eb-8d26-0477e9083c9f.png)
-* ![image](./images/2021-04-25 06_50_57-KiteENCTOKEN.png)
+* Activating Virtual environment venv
+  
+  ![image](https://user-images.githubusercontent.com/73125182/115976649-aad52800-a58d-11eb-95cb-e919bc7850d0.png)
 
-* ![image](https://user-images.githubusercontent.com/73125182/115976365-f0442600-a58a-11eb-8e6f-19e2bd29a773.png)
-* ![image](https://user-images.githubusercontent.com/73125182/115976373-110c7b80-a58b-11eb-9f25-fadd2f7c5f15.png)
-* ![image](https://user-images.githubusercontent.com/73125182/115976385-2f727700-a58b-11eb-948c-83546fc1a2dd.png)
-* ![image](https://user-images.githubusercontent.com/73125182/115976391-42854700-a58b-11eb-96a1-37ae39dcc1ab.png)
+* Installing all requirements from `requirements.txt` using pip
+  
+  ![image](https://user-images.githubusercontent.com/73125182/115976685-fee00c80-a58d-11eb-93eb-92c55cbab47a.png)
+  
+  ![image](https://user-images.githubusercontent.com/73125182/115976708-57afa500-a58e-11eb-853a-2b3bbd8d0763.png)
 
+* Below images there is an error which occurred because the session was expired. New enctoken was added to `enctoken.txt` file
+  
+  ![image](https://user-images.githubusercontent.com/73125182/115976802-4adf8100-a58f-11eb-8d26-0477e9083c9f.png)
+
+* Getting the enctoken from the kite dashboard using Chrome DevTool. Copy paste it to enctoken.txt
+  This will help to keep both web session running and script execution will not invalidate web session
+
+  ![image](./images/2021-04-25 06_50_57-KiteENCTOKEN.png)
+
+* Kite dashboard orders page before placing AMO orders.
+ 
+ ![image](https://user-images.githubusercontent.com/73125182/115976365-f0442600-a58a-11eb-8e6f-19e2bd29a773.png)
+
+* Executing script and checking output in console
+
+  ![image](https://user-images.githubusercontent.com/73125182/115976385-2f727700-a58b-11eb-948c-83546fc1a2dd.png)
+
+  ![image](https://user-images.githubusercontent.com/73125182/115976391-42854700-a58b-11eb-96a1-37ae39dcc1ab.png)
+
+* Finally checking the orders on the kite dashboard
+
+  ![image](https://user-images.githubusercontent.com/73125182/115976373-110c7b80-a58b-11eb-9f25-fadd2f7c5f15.png)
+  
 
 
