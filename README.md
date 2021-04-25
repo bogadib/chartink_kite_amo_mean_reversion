@@ -47,8 +47,19 @@ If available stocks are more than 10 then the stocks are sorted according to lat
 * Stop Loss for the Strategy is not implemented in the script, **3%** Stop Loss recommended by Vishal Mehta, people have posted that **4%** works better but some people keep Stop Loss based on their own Risk e.g. **2%** to **2.5%**
 * Similarly, Target or Profit must be kept accordingly to your own Risk Management. Vishal Mehta recommends **6%** while some keep it at **4.5%** 
 * Also, some people exit when the overall MTM / PnL reaches approximately **5%** or **6%** of invested capital.
+* More images will be added in future.
+* Coding is still in progress, for any suggestions please open discussions [here](https://github.com/algo2t/chartink_kite_amo_mean_reversion/discussions/1#discussion-3336072).
 
 
 ### Some useful snapshots
 
-* ![virtualenv](images/2021-04-25 05_01_48-WSL-Ubuntu.png)
+* ![2021-04-25 05_01_48-WSL-Ubuntu](https://user-images.githubusercontent.com/73125182/115976343-aeb37b00-a58a-11eb-964f-c547cc329aac.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976365-f0442600-a58a-11eb-8e6f-19e2bd29a773.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976373-110c7b80-a58b-11eb-9f25-fadd2f7c5f15.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976385-2f727700-a58b-11eb-948c-83546fc1a2dd.png)
+* ![image](https://user-images.githubusercontent.com/73125182/115976391-42854700-a58b-11eb-96a1-37ae39dcc1ab.png)
+
+
+
+
+
